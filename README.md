@@ -208,8 +208,9 @@ equations used in the code. Units: SI internally; energies, momenta and masses i
 unless stated; κ = 0.299 792 458 GeV·T⁻¹·m⁻¹. Each topic names the module that implements it.
 Click a topic to expand it.
 
-<details>
-<summary><b>1 · Relativistic kinematics</b> — <code>physics/events/FourVector.ts</code></summary>
+### 1 · Relativistic kinematics
+
+<sub>Implemented in <code>physics/events/FourVector.ts</code></sub>
 
 ```math
 E^2 = p^2 + m^2,\qquad \beta = \frac{p}{E},\qquad \gamma = \frac{E}{m},\qquad \beta\gamma = \frac{p}{m}
@@ -235,10 +236,10 @@ m_{12}^2 \simeq 2\,p_{T1}\,p_{T2}\,\big(\cosh\Delta\eta - \cos\Delta\phi\big)
 Centre-of-mass energy for identical head-on beams: $`\sqrt{s}=2E_\text{beam}`$. For ions, per nucleon pair:
 $`\sqrt{s_{NN}} = 2E_\text{beam}/A`$, with $`E_\text{beam} = Z\cdot E_\text{p-equiv}`$ at fixed rigidity.
 
-</details>
 
-<details>
-<summary><b>2 · Magnetic rigidity & ring kinematics</b> — <code>physics/accelerator/MagneticRigidity.ts</code>, <code>AcceleratorCore.ts</code></summary>
+### 2 · Magnetic rigidity & ring kinematics
+
+<sub>Implemented in <code>physics/accelerator/MagneticRigidity.ts</code>, <code>AcceleratorCore.ts</code></sub>
 
 A particle of charge *Ze* on a circle of radius ρ in a field *B*:
 
@@ -255,10 +256,10 @@ I_\text{beam} = n_b\,N\,Z e\,f_\text{rev},\qquad
 E_\text{stored} = n_b\,N\,E
 ```
 
-</details>
 
-<details>
-<summary><b>3 · Synchrotron radiation</b> — <code>physics/accelerator/SynchrotronRadiation.ts</code></summary>
+### 3 · Synchrotron radiation
+
+<sub>Implemented in <code>physics/accelerator/SynchrotronRadiation.ts</code></sub>
 
 Energy lost per turn in an isomagnetic ring, with its critical photon energy:
 
@@ -271,10 +272,10 @@ P_\text{SR} = U_0\, f_\text{rev}\, n_b N
 The γ⁴ = (E/m)⁴ scaling is why electrons radiate ≈ (m_p/m_e)⁴ ≈ 10¹³ times more than protons
 at the same energy. The Sandbox therefore flags a 7 TeV electron ring as non-physical.
 
-</details>
 
-<details>
-<summary><b>4 · Superconducting magnets & the critical surface</b> — <code>physics/accelerator/MagnetModel.ts</code></summary>
+### 4 · Superconducting magnets & the critical surface
+
+<sub>Implemented in <code>physics/accelerator/MagnetModel.ts</code></sub>
 
 Upper critical field vs temperature, and the operating margin on the load line:
 
@@ -296,10 +297,10 @@ E_\text{mag} = \tfrac12 L I^2
 | Nb-Ti | 9.2 K | 14.5 T |
 | Nb₃Sn | 18 K | 28 T (VERIFY) |
 
-</details>
 
-<details>
-<summary><b>5 · Linear beam optics (Courant–Snyder / Twiss)</b> — <code>physics/beam/*</code>, <code>physics/optics/*</code></summary>
+### 5 · Linear beam optics (Courant–Snyder / Twiss)
+
+<sub>Implemented in <code>physics/beam/*</code>, <code>physics/optics/*</code></sub>
 
 Transverse motion obeys Hill's equation, with quadrupole strength $`k = G/(B\rho)`$:
 
@@ -355,10 +356,10 @@ At the interaction point (a waist, α* = 0):
 A smaller β* gives a smaller σ*, but a larger β in the inner triplet. That is the squeeze trade-off
 limited by magnet aperture.
 
-</details>
 
-<details>
-<summary><b>6 · Luminosity, crossing angle, rates & pile-up</b> — <code>physics/beam/BeamModel.ts</code>, <code>physics/luminosity</code>, <code>physics/bunches</code>, <code>physics/pileup</code></summary>
+### 6 · Luminosity, crossing angle, rates & pile-up
+
+<sub>Implemented in <code>physics/beam/BeamModel.ts</code>, <code>physics/luminosity</code>, <code>physics/bunches</code>, <code>physics/pileup</code></sub>
 
 Round Gaussian beams colliding head-on, with the geometric reduction from a full crossing angle
 θ_c (Piwinski angle φ):
@@ -393,10 +394,10 @@ P(n\ge1) = 1-e^{-\mu}
 
 At 2×10³⁴ cm⁻²s⁻¹, σ_inel ≈ 80 mb and 2808 bunches, μ ≈ 50.
 
-</details>
 
-<details>
-<summary><b>7 · Charged-particle transport & numerical integration</b> — <code>physics/propagation/TrackPropagator.ts</code></summary>
+### 7 · Charged-particle transport & numerical integration
+
+<sub>Implemented in <code>physics/propagation/TrackPropagator.ts</code></sub>
 
 Lorentz force; magnetic fields do no work, so |p| is conserved:
 
@@ -423,10 +424,10 @@ R = \frac{p_T}{\kappa\,|q|\,B}
 h_\text{new} = h\cdot\min\!\Big(5,\max\big(0.2,\;0.9\,(\text{tol}/e)^{1/5}\big)\Big)
 ```
 
-</details>
 
-<details>
-<summary><b>8 · Magnetic field maps (solenoids, toroids, dipoles)</b> — <code>detector/fieldmaps/*</code>, <code>physics/propagation/*</code></summary>
+### 8 · Magnetic field maps (solenoids, toroids, dipoles)
+
+<sub>Implemented in <code>detector/fieldmaps/*</code>, <code>physics/propagation/*</code></sub>
 
 **Finite solenoid** (current sheet of radius *a*, length *L*; Derby & Olbert 2010). With
 $`z_\pm = z\pm L/2`$, $`k_\pm^2 = \dfrac{z_\pm^2+(a-\rho)^2}{z_\pm^2+(a+\rho)^2}`$ and $`\gamma=\dfrac{a-\rho}{a+\rho}`$:
@@ -463,10 +464,10 @@ B(z) = B_\text{peak}\,e^{-(z-z_0)^2/2\sigma^2},\qquad
 **Interpolation**: bilinear in (r, z), with B_z even and B_r odd under z → −z; trilinear on 3D grids.
 The map is exact for fields that are linear between nodes.
 
-</details>
 
-<details>
-<summary><b>9 · Detector response</b> — <code>physics/detector/DetectorResponse.ts</code>, <code>detector/response/ResponseConfig.ts</code></summary>
+### 9 · Detector response
+
+<sub>Implemented in <code>physics/detector/DetectorResponse.ts</code>, <code>detector/response/ResponseConfig.ts</code></sub>
 
 Resolutions (⊕ = quadrature sum):
 
@@ -488,10 +489,10 @@ Multiple-scattering angle (Highland), used as the Kalman process noise:
 \theta_0 = \frac{13.6\ \text{MeV}}{\beta c p}\sqrt{\frac{x}{X_0}}\left(1+0.038\ln\frac{x}{X_0}\right)
 ```
 
-</details>
 
-<details>
-<summary><b>10 · Particle identification (dE/dx, TOF, RICH)</b> — <code>detector/response/PID.ts</code></summary>
+### 10 · Particle identification (dE/dx, TOF, RICH)
+
+<sub>Implemented in <code>detector/response/PID.ts</code></sub>
 
 **Specific ionization** (Bethe–Bloch, ALEPH parameterization used for gas TPCs; βγ = p/m):
 
@@ -521,10 +522,10 @@ minimum χ² over e, μ, π, K, p:
 \chi^2_h = \sum_k \left(\frac{x_k - \hat x_k(h)}{\sigma_k}\right)^2
 ```
 
-</details>
 
-<details>
-<summary><b>11 · Kalman-like track fitting</b> — <code>physics/fitting/KalmanTrackFit.ts</code></summary>
+### 11 · Kalman-like track fitting
+
+<sub>Implemented in <code>physics/fitting/KalmanTrackFit.ts</code></sub>
 
 The state is the perigee $`\mathbf x = (d_0,\;\phi_0,\;\rho)`$. The measurement is the hit azimuth
 $`z_k = \phi_k`$ at radius $`r_k`$, with $`R_k = (\sigma_{r\phi}/r_k)^2`$.
@@ -549,10 +550,10 @@ p_T = \frac{\kappa\,|B_z|}{|\rho|},\qquad q = -\operatorname{sign}(\rho)\,\opera
   $`(p_T^\text{fit}-p_T^\text{true})/\sigma_{p_T}`$ should have unit width (tested).
 - Longitudinal parameters from a straight-line fit $`z = z_0 + s\cot\theta`$ in transverse arc length *s*.
 
-</details>
 
-<details>
-<summary><b>12 · Vertices, clustering, jets & missing energy</b> — <code>physics/reconstruction/*</code></summary>
+### 12 · Vertices, clustering, jets & missing energy
+
+<sub>Implemented in <code>physics/reconstruction/*</code></sub>
 
 - **Primary vertex**: tracks with |d₀| < 1 mm are clustered in z₀; the hard scatter is the vertex with the largest $`\sum p_T^2`$.
 - **Displaced vertices**: two-track circle intersections. K⁰_S tag: |m_ππ − 497.6 MeV| < 30 MeV. Λ tag: |m_pπ − 1115.7 MeV| < 15 MeV.
@@ -573,10 +574,10 @@ d_{iB} = k_{T,i}^{2p},\qquad
 
 - **Missing transverse momentum** (inferred, never seen): $`\vec E_T^\text{miss} = -\sum_i \vec p_{T,i}`$ over clusters and muons (Phase 2), or tracks and objects (Phase 1).
 
-</details>
 
-<details>
-<summary><b>13 · Quench engineering (Quench V2)</b> — <code>physics/accelerator/QuenchModelV2.ts</code></summary>
+### 13 · Quench engineering (Quench V2)
+
+<sub>Implemented in <code>physics/accelerator/QuenchModelV2.ts</code></sub>
 
 When a superconductor leaves its critical surface, a resistive "normal zone" appears. The stored
 magnetic energy must then be dissipated without overheating the coil.
@@ -627,10 +628,10 @@ C(T) \approx C_\text{max}\frac{(T/\Theta)^3}{1+(T/\Theta)^3} + \frac{C_\text{He}
 drive the whole coil normal after a delay. The energy-extraction switch opens at detection, and
 energy conservation $`E_0 = E_\text{mag}+E_\text{coil}+E_\text{dump}`$ is checked.
 
-</details>
 
-<details>
-<summary><b>14 · Statistics & fitting</b> — <code>analysis/fitting/HistogramFit.ts</code></summary>
+### 14 · Statistics & fitting
+
+<sub>Implemented in <code>analysis/fitting/HistogramFit.ts</code></sub>
 
 Binned maximum likelihood with expected counts $`\nu_i(\boldsymbol\theta)`$:
 
@@ -655,7 +656,6 @@ Z \approx \frac{S}{\sqrt B}\ \ (\mu\pm2\sigma\ \text{window})
 
 Models: $`N\,G(x;\mu,\sigma)`$, optionally plus $`e^{a_0+a_1(x-x_c)}`$ or $`b_0+b_1(x-x_c)`$.
 
-</details>
 
 Full derivations, constants and sources are in [docs/physics-model.md](docs/physics-model.md).
 
